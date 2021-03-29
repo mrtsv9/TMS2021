@@ -1,3 +1,5 @@
 public class Test {
-    23
+    public static void main() {
+        System.out.println("Hello");
+    }
 }
