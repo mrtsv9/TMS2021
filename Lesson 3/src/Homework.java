@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Homework {
 
     public static void main(String[] args) {
+
         printArray();
         System.out.println(operation(1));
         System.out.println(operation(-20));
