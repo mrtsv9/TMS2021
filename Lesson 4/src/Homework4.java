@@ -100,23 +100,6 @@ public class Homework4 {
     }
 
     public static void checkNumber(int number) {
-//        String[] str = new String[Integer.toString(number).length()];
-//
-//        System.out.println(Arrays.toString(str));
-//        int counter = 0;
-//        boolean isPositive = true;
-//        for(int i = 0; i < str.length(); i++) {
-//            if (str[i] == '-') {
-//                isPositive = false;
-//            }
-//            counter++;
-//        }
-//        System.out.print("There are " + counter + " digits and " );
-//        if (isPositive) {
-//            System.out.println("the number is positive");
-//        } else {
-//            System.out.println("the number is negative");
-//        }
         String str = String.valueOf(number);
         char strChar[] = str.toCharArray();
         int counter = 0;
