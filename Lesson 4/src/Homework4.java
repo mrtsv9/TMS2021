@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -118,6 +119,98 @@ public class Homework4 {
         }
     }
 
+    public static void printNumbers() {
+        Integer arr[] = new Integer[100];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = i + 1;
+        }
+        Arrays.sort(arr, Collections.reverseOrder());
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void getMaxValue() {
+        int[] mass = new int[12];
+        Random rand = new Random();
+        int maxElement = 0;
+        int maxElementIndex = 0;
+        for (int i = 0; i < mass.length; i++) {
+            mass[i] = rand.nextInt(16);
+            if (mass[i] >= maxElement) {
+                maxElement = mass[i];
+                maxElementIndex = i + 1;
+            }
+        }
+        System.out.println(Arrays.toString(mass));
+        System.out.println("Maximal element is " + maxElement + " and it's endex is " + maxElementIndex );
+    }
+
+    public static void printArray() {
+        int[] arr = new int[20];
+        Random rand = new Random();
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = rand.nextInt(21);
+        }
+        System.out.println(Arrays.toString(arr));
+        int i = 0;
+        for (int x : arr) {
+            if (x % 2 != 0) {
+                arr[i] = 0;
+            }
+            i++;
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
+    // Пока не совсем верно, но по сути работает
+    public static void switchElements() {
+        int[] arr = {4,5,0,23,77,0,8,9,101,2};
+        System.out.println(Arrays.toString(arr));
+        int maxValue = 0;
+        int indexOfMaxELement = 0;
+        int i = 0;
+        for (int x : arr) {
+            if (x > maxValue) {
+                maxValue = x;
+                indexOfMaxELement = i;
+            }
+            i++;
+        }
+        arr[indexOfMaxELement] = arr[0];
+        arr[0] = maxValue;
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void checkRepeating() {
+        int arr[] = new int[10];
+        Random rand = new Random();
+        int tempRepeatingElements[] = new int[arr.length];
+        int k = 0;
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = rand.nextInt(10);
+        }
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i+1; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    tempRepeatingElements[k] = arr[i];
+                    k++;
+                }
+            }
+        }
+//        for (int i = k; i > 0; i--) {
+//            for (int j = k; j > 0; j--) {
+//                if (tempRepeatingElements[i] == tempRepeatingElements[j]) {
+//                    for (int n = i)
+//                }
+//            }
+//        }
+        int repeatingElements[] = new int[k];
+        for (int i = 0; i < repeatingElements.length; i++) {
+            repeatingElements[i] = tempRepeatingElements[i];
+        }
+        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(repeatingElements));
+    }
+
     public static void main(String[] args) {
 //        Задачи:
 //         1) Одноклеточная амеба каждые 3 часа делится на 2 клетки. Определить,
@@ -144,26 +237,26 @@ public class Homework4 {
 //        Надо вывести на экран сколько в этом числе цифр и положительное оно или отрицательное.
 //        Например, Введите число: 5
 //        "5 - это положительное число, количество цифр = 1"
-        checkNumber(-1304215);
+//        checkNumber(-1304215);
 //        5) Создайте массив из всех нечётных чисел от 1 до 100, выведите его на экран в строку,
 //        а затем этот же массив выведите на экран тоже в строку, но в обратном порядке (99 97 95 93 ... 7 5 3 1).
-
+//        printNumbers();
 //        6) Создайте массив из int[] mass = new int[12]; Рандомно заполните его значениями от 0 до 15.
 //        Определите какой элемент является в этом массиве максимальным и сообщите индекс его последнего вхождения в массив.
 //        Пример: {3,4,5,62,7,8,4,-5,7,62,5,1} Максимальный элемент 62, индекс его последнего вхождения в массив = 10
-
+//        getMaxValue();
 //        7) Создайте массив размера 20, заполните его случайными целыми чиселами из отрезка от 0 до 20.
 //        Выведите массив на экран в строку. Замените каждый элемент с нечётным индексом на ноль.
 //        Снова выведете массив на экран на отдельной строке.
-
+//        printArray();
 //        8) Найти максимальный элемент в массиве {4,5,0,23,77,0,8,9,101,2} и поменять его местами с нулевым элементом
-
+//        switchElements();
 //        9) Проверить, различны ли все элементы массива, если не различны то вывести элемент повторяющийся
 //        Пример: {0,3,46,3,2,1,2}
 //        Массив имеет повторяющиеся элементы 3, 2
 //        Пример: {0,34,46,31,20,1,28}
 //        Массив не имеет повторяющихся элементов
-
+        checkRepeating();
 //        10) Создаём квадратную матрицу, размер вводим с клавиатуры.
 //        Заполняем случайными числами в диапазоне от 0 до 50. И выводим на консоль(в виде матрицы).
 //        Далее необходимо транспонировать матрицу(1 столбец станет 1-й строкой, 2-й столбец - 2-й строкой и т. д.)
