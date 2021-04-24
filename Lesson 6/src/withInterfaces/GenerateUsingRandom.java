@@ -4,15 +4,17 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-public class GenerateUsingRandom {
+public class GenerateUsingRandom implements PersonDao {
 
     static final String MALE = "male";
     static final String FEMALE = "female";
 
-    static List generate(List list) {
+
+    @Override
+    public List generate(List list) {
         final Scanner scanner = new Scanner(System.in);
         final Random random = new Random();
-        System.out.print("Enter how many persons to generate: ");
+        System.out.print("Enter how many persons to generatePersons: ");
         int k = scanner.nextInt();
         scanner.nextLine();
         int counter = 0;

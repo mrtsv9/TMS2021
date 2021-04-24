@@ -2,9 +2,9 @@ package withInterfaces;
 
 import java.util.List;
 
-public class GenerateUsingStaticFields {
+public class GenerateUsingStaticFields implements PersonDao {
 
-    static List generate(List list) {
+    public List generate(List list) {
         {
             Person person = new Person();
             Address address = new Address();
@@ -40,4 +40,5 @@ public class GenerateUsingStaticFields {
         }
         return list;
     }
+
 }

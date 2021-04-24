@@ -12,7 +12,7 @@ public class GenerateUsingRandom {
     static List generate(List list) {
         final Scanner scanner = new Scanner(System.in);
         final Random random = new Random();
-        System.out.print("Enter how many persons to generate: ");
+        System.out.print("Enter how many persons to generatePersons: ");
         int k = scanner.nextInt();
         scanner.nextLine();
         int counter = 0;

@@ -11,8 +11,11 @@ public class Main {
 
     public static void main(String[] args) {
         List<Person> persons = new ArrayList<>();
-        GeneratePersons.generate(persons);
-        MilitaryOffice.showAllPersons(persons);
+        InputDataFactory factory = new InputDataFactory();
+        factory.generatePersons(persons);
+        MilitaryOffice office = new MilitaryOffice();
+        office.showAllPersons(persons);
+        office.showAllSortByAge(persons);
     }
 
 }

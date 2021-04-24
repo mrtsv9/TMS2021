@@ -3,9 +3,11 @@ package withInterfaces;
 import java.util.List;
 import java.util.Scanner;
 
-public class GeneratePersons {
+public class InputDataFactory {
 
-    static List generate(List list) {
+    private static PersonDao inputData;
+
+    public PersonDao generatePersons(List list) {
         final Scanner scanner = new Scanner(System.in);
 
         System.out.print("Choose what to do: \n1 - Generate from console \n2 - Generate using random " +
@@ -13,18 +15,21 @@ public class GeneratePersons {
         int choice = scanner.nextInt();
         switch (choice) {
             case 1:
-                GenerateFromConsole.generate(list);
+                inputData = new GenerateFromConsole();
+                inputData.generate(list);
                 break;
             case 2:
-                GenerateUsingRandom.generate(list);
+                inputData = new GenerateUsingRandom();
+                inputData.generate(list);
                 break;
             case 3:
-                GenerateUsingStaticFields.generate(list);
+                inputData = new GenerateUsingStaticFields();
+                inputData.generate(list);
                 break;
             default:
                 System.out.println("Invalid value!");
         }
-        return list;
+        return inputData;
     }
 
 }

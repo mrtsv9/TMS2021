@@ -3,8 +3,8 @@ package withInterfaces;
 import java.util.List;
 import java.util.Scanner;
 
-public class GenerateFromConsole {
-    public static List<Person> generate(List list) {
+public class GenerateFromConsole implements PersonDao {
+    public List<Person> generate(List list) {
         final Scanner scanner = new Scanner(System.in);
         int k = 1;
         int age;
@@ -37,4 +37,5 @@ public class GenerateFromConsole {
         } while (k != 1);
         return list;
     }
+
 }
