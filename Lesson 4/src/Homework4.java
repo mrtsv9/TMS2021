@@ -120,9 +120,11 @@ public class Homework4 {
     }
 
     public static void printNumbers() {
-        Integer arr[] = new Integer[100];
+        Integer arr[] = new Integer[50];
+        int n = 1;
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = i + 1;
+            arr[i] = n;
+            n += 2;
         }
         Arrays.sort(arr, Collections.reverseOrder());
         System.out.println(Arrays.toString(arr));
@@ -131,7 +133,7 @@ public class Homework4 {
     public static void getMaxValue() {
         int[] mass = new int[12];
         Random rand = new Random();
-        int maxElement = 0;
+        int maxElement = Integer.MIN_VALUE;
         int maxElementIndex = 0;
         for (int i = 0; i < mass.length; i++) {
             mass[i] = rand.nextInt(16);
@@ -180,8 +182,19 @@ public class Homework4 {
         System.out.println(Arrays.toString(arr));
     }
 
+    public static boolean isAlreadyThere(int arr[], int k, int j) {
+        for (; k > 0; k--) {
+            for (j = k - 1; j > 0; j--) {
+                if (arr[j] == arr[k]) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     public static void checkRepeating() {
-        int arr[] = new int[10];
+        int arr[] = {2, 3, 3, 2, 5, 3, 2, 2, 3, 5, 9};
         Random rand = new Random();
         int tempRepeatingElements[] = new int[arr.length];
         int k = 0;
@@ -189,20 +202,14 @@ public class Homework4 {
             arr[i] = rand.nextInt(10);
         }
         for (int i = 0; i < arr.length; i++) {
-            for (int j = i+1; j < arr.length; j++) {
-                if (arr[i] == arr[j]) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] == arr[j] && !isAlreadyThere(tempRepeatingElements, k, j)) {
                     tempRepeatingElements[k] = arr[i];
                     k++;
                 }
             }
         }
-//        for (int i = k; i > 0; i--) {
-//            for (int j = k; j > 0; j--) {
-//                if (tempRepeatingElements[i] == tempRepeatingElements[j]) {
-//                    for (int n = i)
-//                }
-//            }
-//        }
+
         int repeatingElements[] = new int[k];
         for (int i = 0; i < repeatingElements.length; i++) {
             repeatingElements[i] = tempRepeatingElements[i];
@@ -232,7 +239,6 @@ public class Homework4 {
 //          * * *        * * *
 //            * *        * *
 //              *        *
-
 //        4)В переменную записываем число.
 //        Надо вывести на экран сколько в этом числе цифр и положительное оно или отрицательное.
 //        Например, Введите число: 5
@@ -240,7 +246,7 @@ public class Homework4 {
 //        checkNumber(-1304215);
 //        5) Создайте массив из всех нечётных чисел от 1 до 100, выведите его на экран в строку,
 //        а затем этот же массив выведите на экран тоже в строку, но в обратном порядке (99 97 95 93 ... 7 5 3 1).
-//        printNumbers();
+//       printNumbers();
 //        6) Создайте массив из int[] mass = new int[12]; Рандомно заполните его значениями от 0 до 15.
 //        Определите какой элемент является в этом массиве максимальным и сообщите индекс его последнего вхождения в массив.
 //        Пример: {3,4,5,62,7,8,4,-5,7,62,5,1} Максимальный элемент 62, индекс его последнего вхождения в массив = 10

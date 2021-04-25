@@ -1,8 +1,11 @@
 package com.home.model;
+
+import lombok.Data;
+
 import java.util.Random;
 import java.util.Scanner;
 
-
+@Data
 public class Computer {
     public String proc = "default";
     public String ram = "default";
@@ -38,7 +41,7 @@ public class Computer {
             Random random = new Random();
             int rand = random.nextInt(2);
             System.out.println(rand);
-            System.out.printf("Attention! Enter 0 or 1: ");
+            System.out.print("Attention! Enter 0 or 1: ");
             Scanner scanner = new Scanner(System.in);
             int input = scanner.nextInt();
             if (rand == input) {
@@ -66,7 +69,7 @@ public class Computer {
     }
 
     public void whatToDo() {
-        int input = 0;
+        int input = 8;
         do {
             System.out.println("What do you like to do? \n1 - Turn on computer \n2 - Turn off computer" +
                     "\n3 - change processor \n4 - change RAM \n5 - change HDD \n6 - repair computer " +
@@ -120,6 +123,7 @@ public class Computer {
                 case 6:
                     print();
                     maxCyclesCounter /= 2;
+                    isBurned = false;
                     for (int i = 0; i < 10; i++) {
                         System.out.println("repairing computer...");
                     }
