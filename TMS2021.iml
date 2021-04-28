@@ -10,6 +10,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Lesson5/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Lesson5/lib" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/Lesson 6/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lesson 7/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lesson 8/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
